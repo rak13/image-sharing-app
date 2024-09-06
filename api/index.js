@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+const cors = require('cors')
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ const postRoute = require('./routes/posts');
 mongoose.connect(process.env.MONGO_URL, () => {
   console.log('Connected to MongoDB');
 })
+
+app.use(cors());
 
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use(express.json());
@@ -57,6 +60,14 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
   }
 });
 
+
+app.get('/gg', (req, res) => {
+  try {
+    return res.status(200).json('Yay!!!');
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 const port = process.env.PORT || 8800;
 app.listen(port, () => {

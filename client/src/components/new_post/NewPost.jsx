@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from "../../utils/axios"
 import DefaultProfilePic from '../../images/noPic.png'
 import './newPost.css'
 

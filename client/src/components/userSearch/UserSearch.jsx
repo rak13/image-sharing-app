@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import DefaultProfilePic from '../../images/noPic.png'
-import axios from 'axios';
+import axios from "../../utils/axios"
 
 export default function UserSearch() {
   const user = useSelector((state) => state.user.user);

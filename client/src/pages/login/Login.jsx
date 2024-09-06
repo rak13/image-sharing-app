@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loginSuccess, loginFail } from "../userSlice";
 import CircularProgress from '@mui/material/CircularProgress';
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../utils/axios"
 import "./login.css"
 
 export default function Login() {

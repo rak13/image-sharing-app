@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
   if (checkUrl[0].length < 1) {
     isUrl = true;
   }
-  
+
   // encode image to base64
   function base64_encode(file) {
     return "data:image/jpeg;base64,"+fs.readFileSync(file, 'base64');
@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
   // if the image is a file, encode it to base64
   if (!isUrl) {
-    base64str = base64_encode(`/usercode/image_sharing_app/api/public/images/${req.body.img}`);
+    base64str = base64_encode(`./public/images/${req.body.img}`);
   }
 
   // create a new post
